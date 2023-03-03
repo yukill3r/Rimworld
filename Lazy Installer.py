@@ -127,7 +127,7 @@ class LazyInstall:
                 if self.UPDATE['A'].upper() in ('Y', 'YES'):
                     try:
                         repo = Repo(mod_loc) 
-                        repo.remotes.origin.pull()
+                        repo.remotes.origin.pull(depth = 1)
                         return f"{name} | Update completed"
                     except Exception as e:
                         return f"{name} | Update error | {e}"
